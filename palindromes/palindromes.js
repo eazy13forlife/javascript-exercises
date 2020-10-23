@@ -1,8 +1,9 @@
+
 const palindromes=(word)=>{
   //create an empty redoneWord string. If you don't put the empty strings, then it says undefined, instead of nothing;
   let redoneWord="";
   //create an alphabet variable that equals all of the letters in the alphabet
-  let alphabet="abcdefghijklmnopqrstuvwxyz";
+  let alphabet="abcdefghijklmnopqrstuvwxyz1234567890";
   //create an array of all the letters in the alphabet variable
   const alphabetArray= alphabet.split("");
   console.log(alphabetArray);
@@ -25,4 +26,5 @@ const palindromes=(word)=>{
   const reverseRedoneWord=redoneWord.split("").reverse().join("");
   return reverseRedoneWord===redoneWord;
 }
+
 module.exports = palindromes
