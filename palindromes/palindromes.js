@@ -1,6 +1,6 @@
 
 const palindromes=(word)=>{
-  //create an empty redoneWord string. If you don't put the empty strings, then it says undefined, instead of nothing;
+  //create an empty redoneWord string to store the word argument without any spaces or special characters. If you don't put the empty strings, then it says undefined, instead of nothing;
   let redoneWord="";
   //create an alphabet variable that equals all of the letters in the alphabet
   let alphabet="abcdefghijklmnopqrstuvwxyz1234567890";
