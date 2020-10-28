@@ -1,17 +1,16 @@
 const add= (...numbers)=>{
 	return numbers.reduce((totalAccumulated,number)=>{
-		//for each number in our numbers array, start by beginning with the  totalAccumulated value(which initially equals 0) and add it to the current number we're on.
+		//for each number in our numbers array, start by beginning with the  totalAccumulated value(which initially equals the first element in our array, since there is no initial value provided) and add it to the current number(which will be the second item in the array).
 		return totalAccumulated+number
-	},0)
+	})
 }
 
 const subtract= (...numbers)=> {
 	return numbers.reduce((total,number,index)=>{
-	//if we are not on the first number(so we are not on index=0) of our numbers array, for each number in our numbers array, start by beginning with the total value(which initially equals the first number in our numbers array) and subtract it from the current number we're on. So, the 0 index won't run any code, but the first index will be the first number-second number=value. the second index will be value-third number and so on.
-		if(index!==0){
+	//  start by beginning with the total value(which initially equals the first number in our numbers array,since there is no initial value provided) and subtract it from the current number we're on(it will automatically be the second number)
 			return total-number
-		}
-	},...numbers[0])
+
+	})
 }
 
 
@@ -24,18 +23,17 @@ const sum=(numbers)=>{
 
 const multiply= (numbers)=>{
 	return numbers.reduce((totalAccumulated,number)=>{
-		//for each number in our numbers array, start by beginning with the  totalAccumulated value(which initially equals 1 because 1 times the first number will give us the first number back, which is what we want) and multiply the totalAccumulated to the current number we're on.
+		//for each number in our numbers array, start by beginning with the  totalAccumulated value(which initially equals the first in our array since no initial value is provided) and multiply the totalAccumulated to the current number we're on(which will automatically be the second number in our array).
 		return totalAccumulated*number
-	},1)
+	})
 }
 
 const power= (...numbers)=>{
-	//we want our initial value to be equal to the first number in our numbers array. This means we will start running our reduce code from the second number(first index) in our array.That way, we can just raise that first number(our initial value) to the power of the second number, which will give us a new accumulated value and then we raise that number to the number we are currently on in our array.
+	//for each number in our numbers array, start by beginning with the  totalAccumulated value(which initially equals the first in our array since no initial value is provided) and power raise the totalAccumulated to the current number we're on(which will automatically be the second number in our array).
 	return numbers.reduce((total,number,index)=>{
-		if(index!==0){
 			return total**number
-		}
-	},...numbers[0])
+
+	})
 }
 
 
