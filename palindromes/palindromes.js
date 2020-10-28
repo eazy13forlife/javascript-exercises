@@ -1,4 +1,4 @@
-
+/*
 const palindromes=(word)=>{
   //create an empty redoneWord string to store the word argument without any spaces or special characters. If you don't put the empty strings, then it says undefined, instead of nothing;
   let redoneWord="";
@@ -25,6 +25,15 @@ const palindromes=(word)=>{
   //split redoneWord into an array of all the letters and reverse the ordering and then join them back again.now we can compare redoneWord with reverseRedoneWord;
   const reverseRedoneWord=redoneWord.split("").reverse().join("");
   return reverseRedoneWord===redoneWord;
+}
+*/
+const palindromes=(word)=>{
+  //take our word argument and match everything that is (not a number, uppercase or lowercase letter and underscore...thats what \W means)AND actually match underscore(which undos the don't match underscore of \W) and replace with an empty string.Also change to lowercase, so case isnt affected
+  const newWord=word.replace(/[\W_]/g,"").toLowerCase();
+  //once we get our newWord array, split and reverse it
+  const reverseWord=newWord.split("").reverse().join("");
+  //check to see if reverseWord is equal to newWord
+  return reverseWord===newWord;
 }
 
 module.exports = palindromes
